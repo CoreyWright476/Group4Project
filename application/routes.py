@@ -14,3 +14,7 @@ def welcome():
 @app.route('/recipies')
 def recipies():
     return render_template('recipies.html')
+
+@app.route('/test')
+def test():
+    return 'test'
