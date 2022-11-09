@@ -15,10 +15,10 @@ def home():
     return render_template('home.html', title='Home')
 
 
-@app.route('/people', methods=['GET'])
-def get_recipe():
+@app.route('/reviews', methods=['GET'])
+def reviews():
     all_people = DATA_PROVIDER.get_recipe()
-    return render_template('people.html', title="Reviews", people=all_people)
+    return render_template('reviews.html', title="Reviews", people=all_people)
 
 
 # #use base html template
@@ -42,8 +42,8 @@ def favourites():
     return render_template('favourites.html', title='My Favourites', my_list=['books','swimming','hiking','eating'])
 
 
-@app.route('/register', methods=['GET', 'POST'])
-def review():
+@app.route('/new_review', methods=['GET', 'POST'])
+def new_review():
     error = ""
     # instantiating an object of type BasicForm
     form = BasicForm()
@@ -57,6 +57,6 @@ def review():
             new_recipe_id = DATA_PROVIDER.add_user_review(name, recipe, comment)
             success = 'Person with ID ' + str(new_recipe_id) + ' was created. Thank you!'
             return render_template('success.html', success_message=success)
-    return render_template('person.html', title='registration', form=form, message=error)
+    return render_template('new_review.html', title='registration', form=form, message=error)
 
 

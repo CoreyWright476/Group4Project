@@ -3,10 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>{{Title}} - Page</title>
-    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
 </head>
 <body>
 <h1>{{ title }} Page</h1>
-{% block body_content %}{% endblock %}
+{% block body_content %}
+{% endblock %}
 </body>
+<footer>
+    <div>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('reviews') }}">check out our testimonials</a>
+        <a href="{{ url_for('new_review') }}">Leave a review!</a>
+    </div>
+</footer>
 </html>
