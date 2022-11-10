@@ -57,7 +57,7 @@ def new_review():
             new_recipe_id = DATA_PROVIDER.add_user_review(name, recipe, comment)
             success = 'Person with ID ' + str(new_recipe_id) + ' was created. Thank you!'
             return render_template('success.html', success_message=success)
-    return render_template('new_review.html', title='registration', form=form, message=error)
+    return render_template('new_review.html', title='Review', form=form, message=error)
 
 
 @app.route('/search', methods=['GET', 'POST'])
