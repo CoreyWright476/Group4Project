@@ -60,3 +60,18 @@ def new_review():
     return render_template('new_review.html', title='registration', form=form, message=error)
 
 
+@app.route('/search', methods=['GET', 'POST'])
+def search():
+    if request.method == "POST":
+        book = request.form['book']
+
+        cursor.execute("SELECT name, recipe from user_review WHERE name LIKE %s OR recipe LIKE %s", (book, book))
+        conn.commit()
+        data = cursor.fetchall()
+
+        if len(data) == 0 and book == 'all':
+            cursor.execute("SELECT name, recipe from user_review")
+            conn.commit()
+            data = cursor.fetchall()
+        return render_template('search.html', data=data)
+    return render_template('search.html')

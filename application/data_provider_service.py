@@ -42,3 +42,7 @@ class DataProviderService:
             self.cursor.execute(sql, input_values)
             all_review = self.cursor.fetchone()
         return all_review
+
+
+
+
