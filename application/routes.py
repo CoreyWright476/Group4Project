@@ -1,13 +1,34 @@
 from flask import render_template, request
 
 from application import app
-from application.forms import BasicForm
+from application.forms import BasicForm, searchForm
 
 # needed to connect to database
 from application.data_provider_service import DataProviderService
 # instantiating an object of DataProviderService
 DATA_PROVIDER = DataProviderService()
 
+@app.context_processor
+def base():
+    form = searchForm()
+    return dict(form=form)
+
+
+@app.route('/search', methods=['POST'])
+def search():
+    form = searchForm()
+    posts = Posts.query
+    if form.validate_on_submit():
+        post.searched = form.searched.data
+
+        posts = posts.filter(posts.content.like('%' + post.searched ))
+        posts = posts.order_by(posts.title).all()
+
+        return render_template(
+            "search.html",
+            form=form,
+            searched=post.searched,
+            posts = posts)
 
 @app.route('/')
 @app.route('/home')

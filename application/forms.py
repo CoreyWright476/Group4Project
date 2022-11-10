@@ -12,3 +12,7 @@ class BasicForm(FlaskForm):
     recipe = StringField('Recipe')
     comment = StringField('Comment')
     submit = SubmitField('Add Review')
+
+class searchForm(FlaskForm):
+    searched = StringField("Searched")
+    submit = SubmitField('submit')

@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block body_content %}
+    <br/>
+    <h2>You searched for {{ searched }} </h2>
+    <p>{{ searched }}</p>
+    <br/>
+
+    {% for post in posts %}
+        <a href="{{ url_for('post',
+         id=post.id)}}">
+            {{ post.title }}</a><br/>
+    {% endfor %}
+
+{% endblock %}
