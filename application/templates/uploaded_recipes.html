@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block body_content %}
+    <p>Checkout our recipes added by our users!</p>
+<ul>
+{% for recipe in reviews %}
+<li>{{ recipe[0] }}  {{ recipe[1]}}     {{ recipe[2] }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
