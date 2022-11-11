@@ -1,5 +1,60 @@
 {% extends "layout.html" %}
-{% block title %}Home Page{% endblock %}
+{% block title %}Home{% endblock %}
 {% block body_content %}
-<p>Welcome to our home page</p>
+
+<div class="container-fluid bg-1 text-center">
+   <a href="https://www.soscuisine.com/blog/top-10-recipes-inspired-by-world-cuisine/">
+    <img
+        src="{{url_for('static', filename='images/Homeimage.jpeg')}}"
+        class="rounded-circle" style="display:inline">
+   </a>
+</div>
+
+<p>"Eating the same thing day in and day out can definitely get to be a bit dull.
+    Luckily, there are many different types of cuisine to spark your imagination.
+    A great dish doesn’t have to be authentic, but even taking a few little inspirations — a spice blend you don’t normally use or an exotic vegetable — can wake up your inner gourmet.
+    These are our TOP 10 favourite recipes from around world, chosen based both on flavour and how easy they are to make at home!</p>"
+
+ <div class="container">
+   <div class="row">
+     <div class="col-sm-4">
+       <div class="card" style="width: 18rem">
+         <img
+              class="card-img-top"
+              src="{{ url_for('static', filename='images/Collections_British_4-693f537.jpeg')}}" alt="Card image cap"/>
+         <div class="card-body">
+           <h5 class="card-title">English</h5>
+           <p class="card-text" style="color: black">
+                Click here for some traditional english recipes!
+           </p>
+           <a href="https://insanelygoodrecipes.com/british-recipes/" class="btn btn-primary"
+                >English recipies!</a>
+
+         </div>
+       </div>
+    </div>
+   <div class="col-sm-4">
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="{{ url_for('static', filename='images/indian.jpeg')}}"/>
+      <div class="card-body">
+        <h5 class="card-title">Indian</h5>
+        <p class="card-text">Click here for some traditional indian recipes!</p>
+        <a href="https://simbi.com/shilpa-kulkarni/indian-recipes?gclid=EAIaIQobChMIpPnUj7Ok-wIVA7DtCh2hlAo2EAAYAiAAEgIUbvD_BwE" class="btn btn-primary">Indian recipies</a>
+      </div>
+    </div>
+ </div>
+  <div class="col-sm-4">
+ <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{{ url_for('static', filename='images/japanese.jpeg')}}">
+  <div class="card-body">
+    <h5 class="card-title">Japanese</h5>
+    <p class="card-text">Click here for some Japanese recipies!
+    </p>
+    <a href="https://www.delicious.com.au/recipes/collections/gallery/55-quick-and-easy-japanese-recipes-to-try-tonight/l1y6brzi" class="btn btn-primary">Japanese recipies</a>
+   </div>
+  </div>
+ </div>
+</div>
+</body>
+    <script></script>
 {% endblock %}

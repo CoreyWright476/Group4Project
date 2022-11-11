@@ -1,18 +1,18 @@
 {% extends "layout.html" %}
 {% block body_content %}
-    <p>Leave a review!</p>
-    <p>Please leave a review below, thankyou</p>
+    <p>Post a recipe!</p>
+    <p>Please leave a recipe below, thankyou</p>
         <div class='form'>
             <form method='POST' action=''>
                 {{ form.hidden_tag() }}
-                {{ form.name.label}}
-                {{ form.name }}
+                {{ form.name.label(
+        class="form-label" ) }} {{ form.name }}
                 <br>
-                {{ form.recipe.label}}
-                {{ form.recipe }}
+                {{ form.recipe.label (
+        class="form-label" ) }} {{ form.recipe_name }}
                 <br>
-                {{form.comment.label}}
-               {{ form.comment }}
+                {{ form.recipe.label (
+        class="form-label" ) }} {{ form.recipe }}
                 <br>
                 {{ form.submit(
         class="btn btn-primary") }}
